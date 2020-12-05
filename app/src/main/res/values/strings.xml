@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Interval Calculator</string>
+    <string name="title_part1">Part 1</string>
+    <string name="description_part1">Here you can add, subtract, multiply and divide 2 arbitrarily set intervals</string>
+
+
+
+    <string name="title_part2">Part 2</string>
+    <string name="title_part3">Part 3</string>
+    <string name="brace_end">)</string>
+    <string name="two_dots">:</string>
+</resources>
