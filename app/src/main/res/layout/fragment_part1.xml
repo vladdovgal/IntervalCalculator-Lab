@@ -144,6 +144,7 @@
         />
 
     <Button
+        android:id="@+id/btnFindSolution"
         android:layout_width="145dp"
         android:layout_height="60dp"
         android:text="Calculate everything"
