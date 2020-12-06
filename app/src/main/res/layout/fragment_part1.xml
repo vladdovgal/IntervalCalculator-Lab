@@ -145,10 +145,10 @@
 
     <Button
         android:id="@+id/btnFindSolution"
-        android:layout_width="145dp"
-        android:layout_height="60dp"
+        android:layout_width="135dp"
+        android:layout_height="55dp"
         android:text="Calculate everything"
-        android:textSize="13sp"
+        android:textSize="12sp"
         android:fontFamily="@font/arvo"
         android:backgroundTint="@color/black"
         android:layout_marginStart="@dimen/padding_medium"
@@ -167,8 +167,12 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        android:overScrollMode="never"
         android:layout_marginTop="@dimen/margin_medium"
         app:layout_constraintTop_toTopOf="@id/separatorResult"
         app:layout_constraintStart_toStartOf="parent"
