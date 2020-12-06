@@ -19,10 +19,10 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutInterval1"
+        android:id="@+id/layoutMatrixA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/descriptionPart1">
@@ -32,57 +32,366 @@
             style="@style/LabelDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="A = ("
+            android:text="A = "
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
 
-        <EditText
-            android:id="@+id/etInt1Start"
+        <TextView
+            android:id="@+id/startBrace1"
+            style="@style/LabelDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="55dp"
-            android:layout_marginStart="@dimen/margin_small"
-            android:inputType="numberDecimal|numberSigned"
-            android:textAlignment="center"
-            android:textSize="20sp"
+            android:text="{"
+            android:textSize="100sp"
+            app:layout_constraintTop_toTopOf="@id/title11"
             app:layout_constraintBottom_toBottomOf="@id/title11"
             app:layout_constraintStart_toEndOf="@id/title11"
-            app:layout_constraintTop_toTopOf="@id/title11" />
+            />
 
         <TextView
-            android:id="@+id/title12"
+            android:id="@+id/endBrace1"
             style="@style/LabelDescription"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_small"
-            android:text="@string/two_dots"
-            app:layout_constraintBottom_toBottomOf="@id/etInt1Start"
-            app:layout_constraintStart_toEndOf="@id/etInt1Start"
-            app:layout_constraintTop_toTopOf="@id/etInt1Start" />
-
-        <EditText
-            android:id="@+id/etInt1End"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="55dp"
+            android:text="}"
+            android:textSize="100sp"
             android:layout_marginStart="@dimen/margin_small"
-            android:inputType="numberDecimal|numberSigned"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@id/etInt1Start"
-            app:layout_constraintStart_toEndOf="@id/title12"
-            app:layout_constraintTop_toTopOf="@id/etInt1Start" />
+            app:layout_constraintTop_toTopOf="@id/title11"
+            app:layout_constraintBottom_toBottomOf="@id/title11"
+            app:layout_constraintStart_toEndOf="@id/layoutB"
+            />
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/startBrace1"
+            app:layout_constraintTop_toTopOf="@id/startBrace1"
+            >
+
+
+            <EditText
+                android:id="@+id/etA0"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:inputType="numberDecimal|numberSigned"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/title12"
+                style="@style/LabelDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:text="@string/semicolon"
+                app:layout_constraintBottom_toBottomOf="@id/etA0"
+                app:layout_constraintStart_toEndOf="@id/etA0"
+                app:layout_constraintTop_toTopOf="@id/etA0" />
+
+            <EditText
+                android:id="@+id/etA1"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:minWidth="55dp"
+                android:layout_marginStart="@dimen/margin_small"
+                android:inputType="numberDecimal|numberSigned"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/etA0"
+                app:layout_constraintStart_toEndOf="@id/title12"
+                app:layout_constraintTop_toTopOf="@id/etA0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/layoutA"
+            app:layout_constraintTop_toTopOf="@id/startBrace1"
+            >
+
+
+            <EditText
+                android:id="@+id/etB0"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:inputType="numberDecimal|numberSigned"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/title13"
+                style="@style/LabelDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:text="@string/semicolon"
+                app:layout_constraintBottom_toBottomOf="@id/etB0"
+                app:layout_constraintStart_toEndOf="@id/etB0"
+                app:layout_constraintTop_toTopOf="@id/etB0" />
+
+            <EditText
+                android:id="@+id/etB1"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:minWidth="55dp"
+                android:layout_marginStart="@dimen/margin_small"
+                android:inputType="numberDecimal|numberSigned"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/etB0"
+                app:layout_constraintStart_toEndOf="@id/title13"
+                app:layout_constraintTop_toTopOf="@id/etB0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/startBrace1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+
+            <EditText
+                android:id="@+id/etC0"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:inputType="numberDecimal|numberSigned"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/title14"
+                style="@style/LabelDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:text="@string/semicolon"
+                app:layout_constraintBottom_toBottomOf="@id/etC0"
+                app:layout_constraintStart_toEndOf="@id/etC0"
+                app:layout_constraintTop_toTopOf="@id/etC0" />
+
+            <EditText
+                android:id="@+id/etC1"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:minWidth="55dp"
+                android:layout_marginStart="@dimen/margin_small"
+                android:inputType="numberDecimal|numberSigned"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/etC0"
+                app:layout_constraintStart_toEndOf="@id/title14"
+                app:layout_constraintTop_toTopOf="@id/etC0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/layoutB"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <EditText
+                android:id="@+id/etD0"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:inputType="numberDecimal|numberSigned"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/title15"
+                style="@style/LabelDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:text="@string/semicolon"
+                app:layout_constraintBottom_toBottomOf="@id/etD0"
+                app:layout_constraintStart_toEndOf="@id/etD0"
+                app:layout_constraintTop_toTopOf="@id/etD0" />
+
+            <EditText
+                android:id="@+id/etD1"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:minWidth="55dp"
+                android:layout_marginStart="@dimen/margin_small"
+                android:inputType="numberDecimal|numberSigned"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/etD0"
+                app:layout_constraintStart_toEndOf="@id/title15"
+                app:layout_constraintTop_toTopOf="@id/etD0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutMatrixB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutMatrixA">
 
         <TextView
-            android:id="@+id/title13"
+            android:id="@+id/title111"
             style="@style/LabelDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:text="B = "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/startBrace11"
+            style="@style/LabelDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="{"
+            android:textSize="100sp"
+            app:layout_constraintTop_toTopOf="@id/title111"
+            app:layout_constraintBottom_toBottomOf="@id/title111"
+            app:layout_constraintStart_toEndOf="@id/title111"
+            />
+
+        <TextView
+            android:id="@+id/endBrace11"
+            style="@style/LabelDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="}"
+            android:textSize="100sp"
             android:layout_marginStart="@dimen/margin_small"
-            android:text="@string/brace_end"
-            app:layout_constraintBottom_toBottomOf="@id/title11"
-            app:layout_constraintStart_toEndOf="@id/etInt1End"
-            app:layout_constraintTop_toTopOf="@id/title11" />
+            app:layout_constraintTop_toTopOf="@id/title111"
+            app:layout_constraintBottom_toBottomOf="@id/title111"
+            app:layout_constraintStart_toEndOf="@id/layoutB1"
+            />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutB1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/startBrace11"
+            app:layout_constraintTop_toTopOf="@id/startBrace11"
+            >
+
+
+            <EditText
+                android:id="@+id/etB10"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:inputType="numberDecimal|numberSigned"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/title121"
+                style="@style/LabelDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:text="@string/semicolon"
+                app:layout_constraintBottom_toBottomOf="@id/etB10"
+                app:layout_constraintStart_toEndOf="@id/etB10"
+                app:layout_constraintTop_toTopOf="@id/etB10" />
+
+            <EditText
+                android:id="@+id/etB11"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:minWidth="55dp"
+                android:layout_marginStart="@dimen/margin_small"
+                android:inputType="numberDecimal|numberSigned"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/etB10"
+                app:layout_constraintStart_toEndOf="@id/title121"
+                app:layout_constraintTop_toTopOf="@id/etB10" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutB2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/startBrace11"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+
+            <EditText
+                android:id="@+id/etB20"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:inputType="numberDecimal|numberSigned"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/title141"
+                style="@style/LabelDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:text="@string/semicolon"
+                app:layout_constraintBottom_toBottomOf="@id/etB20"
+                app:layout_constraintStart_toEndOf="@id/etB20"
+                app:layout_constraintTop_toTopOf="@id/etB20" />
+
+            <EditText
+                android:id="@+id/etB21"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:minWidth="55dp"
+                android:layout_marginStart="@dimen/margin_small"
+                android:inputType="numberDecimal|numberSigned"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/etB20"
+                app:layout_constraintStart_toEndOf="@id/title141"
+                app:layout_constraintTop_toTopOf="@id/etB20" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -96,7 +405,7 @@
         android:text="Clear"
         android:textSize="12sp"
         android:layout_marginTop="@dimen/margin_medium"
-        app:layout_constraintTop_toBottomOf="@id/layoutInterval1"
+        app:layout_constraintTop_toBottomOf="@id/layoutMatrixB"
         app:layout_constraintEnd_toEndOf="parent"
         />
 
@@ -111,7 +420,7 @@
         android:textSize="12sp"
         android:layout_marginTop="@dimen/margin_medium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutInterval1"
+        app:layout_constraintTop_toBottomOf="@id/layoutMatrixB"
         />
 
     <View
@@ -127,7 +436,7 @@
         android:id="@+id/recyclerViewResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
         android:orientation="vertical"
         android:overScrollMode="never"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

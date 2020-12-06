@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.intervalcalculator.R
 import com.example.intervalcalculator.databinding.FragmentPart2Binding
 import com.example.intervalcalculator.ui.part1.Result1Item
 import com.example.intervalcalculator.utils.IntervalUtils
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 
-class Part2Fragment : Fragment() {
+class Part2Fragment : Fragment(R.layout.fragment_part2) {
 
     private lateinit var binding: FragmentPart2Binding
     private var utils: IntervalUtils = IntervalUtils()

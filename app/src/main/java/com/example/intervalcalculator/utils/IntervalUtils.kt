@@ -16,12 +16,6 @@ class IntervalUtils {
     fun multiply(interval1: Interval, interval2: Interval): Interval =
         interval1.product(interval2)
 
-    fun multiplyByScalar(interval: Interval, scalar: Double): Interval =
-        if (scalar >= 0)
-            Pair(interval.first * scalar, interval.second * scalar)
-        else
-            Pair(interval.second * scalar, interval.first * scalar)
-
     fun divide(interval1: Interval, interval2: Interval): Interval =
         interval1.product(Pair(1 / interval2.first, 1 / interval2.second))
 
@@ -33,7 +27,13 @@ class IntervalUtils {
 
     fun calcRadius(interval: Interval): Double = (calcWidth(interval) / 2).round(7)
 
-    fun hasZero(interval: Interval): Boolean = interval.first <= 0 && interval.second >= 0
+    private fun multiplyByScalar(interval: Interval, scalar: Double): Interval =
+        if (scalar >= 0)
+            Pair(interval.first * scalar, interval.second * scalar)
+        else
+            Pair(interval.second * scalar, interval.first * scalar)
+
+    private fun hasZero(interval: Interval): Boolean = interval.first <= 0 && interval.second >= 0
 
     private fun findCoefs(
         coef: String,
@@ -150,13 +150,7 @@ class IntervalUtils {
         d: Interval,
         b1: Interval,
         b2: Interval
-    ) {
-//        val a = Pair(3.0, 4.0)
-//        val b = Pair(-1.0, 2.0)
-//        val c = Pair(-1.0, 1.0)
-//        val d = Pair(1.0, 3.0)
-//        val b1 = Pair(-1.0, 1.0)
-//        val b2 = Pair(1.0, 2.0)
+    ) : Matrix {
         val matrixA = listOf(
             listOf(a, b),
             listOf(c, d)
@@ -168,21 +162,23 @@ class IntervalUtils {
         } else {
             Log.d("myLogs", "Intervals are proper")
         }
+
         hasZero(add(multiply(a, d), multiplyByScalar(multiply(d, c), -1.0)))
         val invA = invertMatrix(matrixA)
         Log.d("myLogs", "Inverted matrix: ")
         invA.forEach {
             it.forEach { it1 -> Log.d("myLogs", "[$it1]") }
         }
-        Log.d("myLogs", "--------------")
         val result = listOf(
             listOf(add(multiply(invA[0][0], matrixB[0]), multiply(invA[0][1], matrixB[1]))),
             listOf(add(multiply(invA[1][0], matrixB[0]), multiply(invA[1][1], matrixB[1]))),
         )
-        Log.d("myLogs", "----Result--")
+        Log.d("myLogs", "Result-----------")
         result.forEach {
-            it.forEach { it1 -> Log.d("myLogs", "[$it1]") }
+            Log.d("myLogs", "Line--")
+            it.forEach {it1 -> Log.d("myLogs", "[$it1]")}
         }
+        return result
     }
 
     private fun check(interval: Interval): Boolean {
@@ -219,7 +215,7 @@ private fun Pair<Double, Double>.product(otherPair: Pair<Double, Double>): Pair<
     )
 }
 
-private fun Double.round(decimals: Int = 2): Double {
+fun Double.round(decimals: Int = 2): Double {
     val numFormat = NumberFormat.getInstance()
     return numFormat.parse("%.${decimals}f".format(this)).toDouble()
 }

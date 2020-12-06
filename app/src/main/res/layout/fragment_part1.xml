@@ -19,7 +19,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutInterval1"
+        android:id="@+id/layoutMatrixA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_large"
@@ -92,7 +92,7 @@
         android:layout_marginTop="@dimen/margin_large"
         android:text="B = ("
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutInterval1" />
+        app:layout_constraintTop_toBottomOf="@id/layoutMatrixA" />
 
     <EditText
         android:id="@+id/etInt2Start"
@@ -149,7 +149,7 @@
         android:fontFamily="@font/arvo"
         android:text="Clear"
         android:textSize="12sp"
-        app:layout_constraintTop_toTopOf="@id/layoutInterval1"
+        app:layout_constraintTop_toTopOf="@id/layoutMatrixA"
         app:layout_constraintEnd_toEndOf="@id/separatorResult"
         />
 

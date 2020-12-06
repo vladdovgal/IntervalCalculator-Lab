@@ -19,7 +19,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutInterval1"
+        android:id="@+id/layoutMatrixA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_large"
@@ -96,7 +96,7 @@
         android:text="Clear"
         android:textSize="12sp"
         android:layout_marginTop="@dimen/margin_medium"
-        app:layout_constraintTop_toBottomOf="@id/layoutInterval1"
+        app:layout_constraintTop_toBottomOf="@id/layoutMatrixA"
         app:layout_constraintEnd_toEndOf="parent"
         />
 
@@ -111,7 +111,7 @@
         android:textSize="12sp"
         android:layout_marginTop="@dimen/margin_medium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutInterval1"
+        app:layout_constraintTop_toBottomOf="@id/layoutMatrixA"
         />
 
     <View
