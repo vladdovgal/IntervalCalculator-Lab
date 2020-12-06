@@ -150,7 +150,7 @@ class IntervalUtils {
         d: Interval,
         b1: Interval,
         b2: Interval
-    ) : Matrix {
+    ): Matrix {
         val matrixA = listOf(
             listOf(a, b),
             listOf(c, d)
@@ -176,7 +176,7 @@ class IntervalUtils {
         Log.d("myLogs", "Result-----------")
         result.forEach {
             Log.d("myLogs", "Line--")
-            it.forEach {it1 -> Log.d("myLogs", "[$it1]")}
+            it.forEach { it1 -> Log.d("myLogs", "[$it1]") }
         }
         return result
     }

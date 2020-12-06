@@ -18,7 +18,6 @@ class Result3Item(private val values: List<Double>) :
         }
     }
 
-
     override fun initializeViewBinding(view: View): ListItemResult3Binding =
         ListItemResult3Binding.bind(view)
 }

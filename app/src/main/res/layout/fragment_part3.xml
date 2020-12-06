@@ -23,8 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_medium"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/descriptionPart1">
 
         <TextView
@@ -33,10 +33,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="A = "
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/startBrace1"
@@ -45,24 +44,21 @@
             android:layout_height="wrap_content"
             android:text="{"
             android:textSize="100sp"
-            app:layout_constraintTop_toTopOf="@id/title11"
             app:layout_constraintBottom_toBottomOf="@id/title11"
             app:layout_constraintStart_toEndOf="@id/title11"
-            />
+            app:layout_constraintTop_toTopOf="@id/title11" />
 
         <TextView
             android:id="@+id/endBrace1"
             style="@style/LabelDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
             android:text="}"
             android:textSize="100sp"
-            android:layout_marginStart="@dimen/margin_small"
-            app:layout_constraintTop_toTopOf="@id/title11"
             app:layout_constraintBottom_toBottomOf="@id/title11"
             app:layout_constraintStart_toEndOf="@id/layoutB"
-            />
-
+            app:layout_constraintTop_toTopOf="@id/title11" />
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -70,8 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@id/startBrace1"
-            app:layout_constraintTop_toTopOf="@id/startBrace1"
-            >
+            app:layout_constraintTop_toTopOf="@id/startBrace1">
 
 
             <EditText
@@ -83,7 +78,7 @@
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/title12"
@@ -100,9 +95,9 @@
                 android:id="@+id/etA1"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:minWidth="55dp"
                 android:layout_marginStart="@dimen/margin_small"
                 android:inputType="numberDecimal|numberSigned"
+                android:minWidth="55dp"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@id/etA0"
@@ -116,9 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@id/layoutA"
-            app:layout_constraintTop_toTopOf="@id/startBrace1"
-            >
-
+            app:layout_constraintTop_toTopOf="@id/startBrace1">
 
             <EditText
                 android:id="@+id/etB0"
@@ -129,7 +122,7 @@
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/title13"
@@ -146,9 +139,9 @@
                 android:id="@+id/etB1"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:minWidth="55dp"
                 android:layout_marginStart="@dimen/margin_small"
                 android:inputType="numberDecimal|numberSigned"
+                android:minWidth="55dp"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@id/etB0"
@@ -161,9 +154,8 @@
             android:id="@+id/layoutC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/startBrace1"
             app:layout_constraintBottom_toBottomOf="parent"
-            >
+            app:layout_constraintStart_toEndOf="@id/startBrace1">
 
 
             <EditText
@@ -175,7 +167,7 @@
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/title14"
@@ -192,9 +184,9 @@
                 android:id="@+id/etC1"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:minWidth="55dp"
                 android:layout_marginStart="@dimen/margin_small"
                 android:inputType="numberDecimal|numberSigned"
+                android:minWidth="55dp"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@id/etC0"
@@ -207,9 +199,8 @@
             android:id="@+id/layoutD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@id/layoutB"
             app:layout_constraintBottom_toBottomOf="parent"
-            >
+            app:layout_constraintEnd_toEndOf="@id/layoutB">
 
             <EditText
                 android:id="@+id/etD0"
@@ -220,7 +211,7 @@
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/title15"
@@ -237,9 +228,9 @@
                 android:id="@+id/etD1"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:minWidth="55dp"
                 android:layout_marginStart="@dimen/margin_small"
                 android:inputType="numberDecimal|numberSigned"
+                android:minWidth="55dp"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@id/etD0"
@@ -257,8 +248,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_medium"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layoutMatrixA">
 
         <TextView
@@ -267,10 +258,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="B = "
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/startBrace11"
@@ -279,23 +269,21 @@
             android:layout_height="wrap_content"
             android:text="{"
             android:textSize="100sp"
-            app:layout_constraintTop_toTopOf="@id/title111"
             app:layout_constraintBottom_toBottomOf="@id/title111"
             app:layout_constraintStart_toEndOf="@id/title111"
-            />
+            app:layout_constraintTop_toTopOf="@id/title111" />
 
         <TextView
             android:id="@+id/endBrace11"
             style="@style/LabelDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
             android:text="}"
             android:textSize="100sp"
-            android:layout_marginStart="@dimen/margin_small"
-            app:layout_constraintTop_toTopOf="@id/title111"
             app:layout_constraintBottom_toBottomOf="@id/title111"
             app:layout_constraintStart_toEndOf="@id/layoutB1"
-            />
+            app:layout_constraintTop_toTopOf="@id/title111" />
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -303,8 +291,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@id/startBrace11"
-            app:layout_constraintTop_toTopOf="@id/startBrace11"
-            >
+            app:layout_constraintTop_toTopOf="@id/startBrace11">
 
 
             <EditText
@@ -316,7 +303,7 @@
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/title121"
@@ -333,9 +320,9 @@
                 android:id="@+id/etB11"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:minWidth="55dp"
                 android:layout_marginStart="@dimen/margin_small"
                 android:inputType="numberDecimal|numberSigned"
+                android:minWidth="55dp"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@id/etB10"
@@ -349,9 +336,8 @@
             android:id="@+id/layoutB2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/startBrace11"
             app:layout_constraintBottom_toBottomOf="parent"
-            >
+            app:layout_constraintStart_toEndOf="@id/startBrace11">
 
 
             <EditText
@@ -363,7 +349,7 @@
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/title141"
@@ -380,9 +366,9 @@
                 android:id="@+id/etB21"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:minWidth="55dp"
                 android:layout_marginStart="@dimen/margin_small"
                 android:inputType="numberDecimal|numberSigned"
+                android:minWidth="55dp"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@id/etB20"
@@ -392,7 +378,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
@@ -400,28 +385,26 @@
         android:layout_width="135dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/padding_medium"
+        android:layout_marginTop="@dimen/margin_medium"
         android:backgroundTint="@color/red"
         android:fontFamily="@font/arvo"
         android:text="Clear"
         android:textSize="12sp"
-        android:layout_marginTop="@dimen/margin_medium"
-        app:layout_constraintTop_toBottomOf="@id/layoutMatrixB"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/layoutMatrixB" />
 
     <Button
         android:id="@+id/btnFindSolution"
         android:layout_width="135dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/padding_medium"
+        android:layout_marginTop="@dimen/margin_medium"
         android:backgroundTint="@color/black"
         android:fontFamily="@font/arvo"
         android:text="Calculate"
         android:textSize="12sp"
-        android:layout_marginTop="@dimen/margin_medium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutMatrixB"
-        />
+        app:layout_constraintTop_toBottomOf="@id/layoutMatrixB" />
 
     <View
         android:id="@+id/separatorResult"
@@ -429,8 +412,7 @@
         android:layout_height="2dp"
         android:layout_marginTop="@dimen/margin_medium"
         android:background="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/btnFindSolution"
-        />
+        app:layout_constraintTop_toBottomOf="@id/btnFindSolution" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewResult"
