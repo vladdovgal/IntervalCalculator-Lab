@@ -1,5 +1,9 @@
 package com.example.intervalcalculator.utils
 
+import java.text.NumberFormat
+import kotlin.math.abs
+import kotlin.math.max
+
 class IntervalUtils {
 
     fun add(interval1: Interval, interval2: Interval): Interval =
@@ -13,6 +17,14 @@ class IntervalUtils {
 
     fun divide(interval1: Interval, interval2: Interval): Interval =
         interval1.product(Pair(1 / interval2.first, 1 / interval2.second))
+
+    fun calcWidth(interval: Interval): Double = (interval.second - interval.first).round(4)
+
+    fun calcMid(interval: Interval): Double = (0.5 * (interval.first + interval.second)).round(4)
+
+    fun calcAbsValue(interval: Interval): Double = max(abs(interval.first), interval.second)
+
+    fun calcRadius(interval: Interval): Double = (calcWidth(interval) / 2).round(4)
 }
 
 typealias Interval = Pair<Double, Double>
@@ -25,11 +37,11 @@ private fun <T, S> List<S>.cartesianProduct(other: List<T>) = this.flatMap {
 }
 
 private fun Pair<Double, Double>.sum(otherPair: Pair<Double, Double>) = Pair(
-    this.first + otherPair.first, this.second + otherPair.second
+    (this.first + otherPair.first).round(2), (this.second + otherPair.second).round(2)
 )
 
 private fun Pair<Double, Double>.difference(otherPair: Pair<Double, Double>) = Pair(
-    this.first - otherPair.second, this.second - otherPair.first
+    (this.first - otherPair.second).round(2), (this.second - otherPair.first).round(2)
 )
 
 private fun Pair<Double, Double>.product(otherPair: Pair<Double, Double>): Pair<Double, Double> {
@@ -37,7 +49,12 @@ private fun Pair<Double, Double>.product(otherPair: Pair<Double, Double>): Pair<
     val listRight = listOf(otherPair.first, otherPair.second)
     val combinationsProduct = listLeft.cartesianProduct(listRight).map { it.first * it.second }
     return Pair(
-        combinationsProduct.minByOrNull { it } ?: 0.0,
-        combinationsProduct.maxByOrNull { it } ?: 0.0
+        (combinationsProduct.minByOrNull { it } ?: 0.0).round(2),
+        (combinationsProduct.maxByOrNull { it } ?: 0.0).round(2)
     )
+}
+
+private fun Double.round(decimals: Int = 2): Double {
+    val numFormat = NumberFormat.getInstance()
+    return numFormat.parse("%.${decimals}f".format(this)).toDouble()
 }

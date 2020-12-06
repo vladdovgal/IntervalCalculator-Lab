@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.intervalcalculator.ui.home.Part1Fragment"
+        android:name="com.example.intervalcalculator.ui.part1.Part1Fragment"
         android:label="@string/title_part1"
         tools:layout="@layout/fragment_part1" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.intervalcalculator.ui.dashboard.DashboardFragment"
+        android:name="com.example.intervalcalculator.ui.part2.Part2Fragment"
         android:label="@string/title_part2"
         tools:layout="@layout/fragment_part2" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.intervalcalculator.ui.notifications.NotificationsFragment"
+        android:name="com.example.intervalcalculator.ui.part3.Part3Fragment"
         android:label="@string/title_part3"
         tools:layout="@layout/fragment_part3" />
 </navigation>
