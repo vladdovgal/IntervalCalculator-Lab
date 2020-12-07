@@ -5,13 +5,16 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.intervalcalculator.R
 import com.example.intervalcalculator.databinding.FragmentPart1Binding
 import com.example.intervalcalculator.databinding.FragmentPart3Binding
 import com.example.intervalcalculator.utils.IntervalUtils
+import com.example.intervalcalculator.utils.Matrix
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
+import java.lang.IllegalArgumentException
 import javax.xml.transform.dom.DOMLocator
 
 class Part3Fragment : Fragment(R.layout.fragment_part3) {
@@ -75,11 +78,17 @@ class Part3Fragment : Fragment(R.layout.fragment_part3) {
                 val d = Pair(d0, d1)
                 val _b1 = Pair(b10, b11)
                 val _b2 = Pair(b20, b21)
-                val resultMatrix = utils.findXMatrix(a, b, c, d, _b1, _b2)
-                val xValues = listOf(resultMatrix[0][0].first,resultMatrix[0][0].second, resultMatrix[1][0].first, resultMatrix[1][0].second)
-                adapter.clear()
-                adapter.add(Result3Item(xValues))
-                recyclerViewResult.adapter = adapter
+                var resultMatrix : Matrix = listOf(listOf())
+                try {
+                    resultMatrix = utils.findXMatrix(a, b, c, d, _b1, _b2)
+                    val xValues = listOf(resultMatrix[0][0].first,resultMatrix[0][0].second, resultMatrix[1][0].first, resultMatrix[1][0].second)
+                    adapter.clear()
+                    adapter.add(Result3Item(xValues))
+                    recyclerViewResult.adapter = adapter
+                } catch (e: IllegalArgumentException) {
+                    Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
+                }
+
             }
         }
 

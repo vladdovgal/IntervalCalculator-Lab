@@ -1,6 +1,7 @@
 package com.example.intervalcalculator.utils
 
 import android.util.Log
+import java.lang.IllegalArgumentException
 import java.text.NumberFormat
 import kotlin.math.abs
 import kotlin.math.max
@@ -162,8 +163,11 @@ class IntervalUtils {
         } else {
             Log.d("myLogs", "Intervals are proper")
         }
-
-        hasZero(add(multiply(a, d), multiplyByScalar(multiply(d, c), -1.0)))
+        val adMinusBc = subtract(multiply(a,d),multiply(c,b))
+        if (hasZero(adMinusBc)) {
+            Log.d("myLogs", "Interval with zero: [ ${adMinusBc.first} ; ${adMinusBc.second} ]")
+            throw IllegalArgumentException("Contains unusual matrices")
+        }
         val invA = invertMatrix(matrixA)
         Log.d("myLogs", "Inverted matrix: ")
         invA.forEach {
